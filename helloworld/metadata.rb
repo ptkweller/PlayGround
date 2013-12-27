@@ -8,4 +8,9 @@ version          '0.0.1'
 
 recipe 'default', 'Installs HelloWorld.html file'
 
+depends 'apt'
+depends 'yum'
+
 depends 'apache2'
+depends 'nginx'
+depends 'iptables'
