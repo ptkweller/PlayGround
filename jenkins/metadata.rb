@@ -9,3 +9,4 @@ version          '0.1'
 recipe 'default', 'Installs Jenkins CI'
 
 depends "apt"
+depends "java"

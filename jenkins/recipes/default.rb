@@ -4,8 +4,8 @@
 # Recipe:: default
 #
 
-#include_recipe "apt"
-#include_recipe "java"
+include_recipe "apt"
+include_recipe "java"
 
 apt_repository "jenkins" do
   uri "http://pkg.jenkins-ci.org/debian"
