@@ -19,6 +19,11 @@
 #  EOH
 #end
 
+# spec_helper.rb
+require 'chefspec'
+require 'chefspec/berkshelf'
+
+
   yum_key 'RPM-GPG-KEY-jenkins-ci' do
     url 'http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key'
     action :add
