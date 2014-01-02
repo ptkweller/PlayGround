@@ -10,7 +10,7 @@
 #end
 
 #bash "install_something" do
-#  user "root"
+#  user "ec2-user"
 #  cwd "/tmp"
 #  code <<-EOH
 #    sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
@@ -19,17 +19,17 @@
 #  EOH
 #end
 
-  yum_key 'RPM-GPG-KEY-jenkins-ci' do
-    url 'http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key'
-    action :add
-  end
+yum_repository 'jenkins-ci' do
+  description "Jenkins CI Repo"
+  baseurl "http://pkg.jenkins-ci.org/redhat/"
+  gpgkey 'http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key'
+  action :create
+end  
 
-  yum_repository 'jenkins-ci' do
-    url 'http://pkg.jenkins-ci.org/redhat'
-    key 'RPM-GPG-KEY-jenkins-ci'
-    action :add
-  end
-  
-package 'jenkins' do
+yum_package "jenkins-ci" do
   action :install
 end
+  
+#package 'jenkins' do
+#  action :install
+#end
