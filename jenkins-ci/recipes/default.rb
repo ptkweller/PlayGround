@@ -15,7 +15,6 @@ bash "add_jenkins_repo" do
   code <<-EOH
     sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
     sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
-#    sudo yum install jenkins
   EOH
 end
 
@@ -32,9 +31,9 @@ end
 #  action :create
 #end  
 
-yum_package "nginx" do
-  action :install
-end
+#yum_package "nginx" do
+#  action :install
+#end
 
 yum_package "jenkins" do
   action :install
