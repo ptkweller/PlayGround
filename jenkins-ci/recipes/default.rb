@@ -19,6 +19,12 @@
 #  EOH
 #end
 
+git "/opt/mysources/yum" do
+  repository "https://github.com/opscode-cookbooks/yum.git"
+  reference "master"
+  action :sync
+end
+
 yum_repository 'jenkins-ci' do
   description "Jenkins CI Repo"
   baseurl "http://pkg.jenkins-ci.org/redhat/"
