@@ -8,4 +8,6 @@ version          '0.1'
 
 recipe 'default', 'Downloads Jenkins CI war and copies to Tomcat instance.'
 
+depends 'java'
+depends 'apt'
 depends 'yum'
