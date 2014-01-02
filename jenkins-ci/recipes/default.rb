@@ -19,8 +19,6 @@
 #  EOH
 #end
 
-include_attribute "yum::epel"
-
   yum_key 'RPM-GPG-KEY-jenkins-ci' do
     url 'http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key'
     action :add
