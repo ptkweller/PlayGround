@@ -1,4 +1,0 @@
-Jenkins
-=======
-
-Jenkins chef recipe.
